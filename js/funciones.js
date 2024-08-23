@@ -538,7 +538,7 @@ if (tienda5.esPropietario(nombrePropietario)){
 } else {
     alert('El no es el propietario, lo siento')
 } */
-class Cliente {
+/* class Cliente {
     constructor (nombre, presupuesto, descuento, numeroTelefono){
         this.nombre = nombre,
         this.presupuesto = presupuesto
@@ -552,12 +552,12 @@ class Cliente {
             return false
         }
     }
-}
+} */
 //!  ESTOY PONIENDO EL VALOR DEL PRESUPUESTO DE TODOS LOS OBJETOS COMO EL DE LA PERSONA 1, PARA QUE SIEMPRE SIGA UTILIZANDO ESE CUANTAS VECES SEA Y CUANTAS VECES SE HAGA LA OPERACION O SE UTILICE EL PROMPT
 // * SE BORRA LA CONDICION DE CUANDO PRESUPUESTO ES 0 NO FALSE PORQUE LO QUE PASA ES QUE SIEMRPE QUE EL VALOR SEA 0, NO HAY NINGUN NÚMERO QUE PUEDA SER MAYOR A 0, COMO LO PIDO EN VALOR > 0, ADEMÁS NO SE PERMITIRÍA EN LA CONDICIÓN DE QUE VALOR DEBE SER MENOR O IGUAL AL PRESUPUESTO, PORQUE EL VALOR NO PUEDE SER CERO O MENOR Y AL NO PODER SERLO, NO SE CUMPLE LA PRIMERA TAMPOCO
 //? SE HACE EL PROCESO DE CONVERSION DEL # PARA DECIR CUANTO FALTA PONIENDO LO QUE SE LE RESTO A PRESUPUESTO CON UN SIGNO NEGATIVO ADELANTE, LO CUAL HACE QUE EL VALOR AL SER NEGATIVO SE NIEGA DOS VECES Y POR LEY DE SIGNOS SE CONVIERTE A POSITIVO, Y HACE EL VALOR POSITIVO PARA MOSTRARLO EN EL ALERT, LO CUAL PRESENTA CUANTO FALTA EN POSITIVO
 
-const cliente1 = new Cliente ('Sebastian', 100000, 20, 3128505262)
+/* const cliente1 = new Cliente ('Sebastian', 100000, 20, 3128505262)
 let retiro1 = parseInt(prompt('¿Por favor dinos cuanto es lo que deseas retirar?'))
 if(cliente1.tranferirDinero(retiro1)){
     cliente1.presupuesto -= retiro1
@@ -583,4 +583,4 @@ if(cliente3.tranferirDinero(retiro3)){
 } else {
     cliente1.presupuesto -= retiro3
     alert(`No puedes hacer más retiros hace falta ${-cliente1.presupuesto}`)
-}
+} */
