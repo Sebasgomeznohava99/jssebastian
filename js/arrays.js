@@ -1,5 +1,5 @@
 /**
- * * Array.lenght = La longitud del array, siempre en un ciclo se utiliza -1
+* * Array.lenght = La longitud del array, siempre en un ciclo se utiliza -1
  * ! Push = introduce un valor al final del array
  * * Unshift = introduce un valor al inicio del array 
  * shift = elimina el primer elemento
@@ -46,10 +46,40 @@ const productos = [ {nombre: 'Mesa', precio: 3500},
 }) */
 //imprime cada uno de los números dentro de numeros
 // find() = recorre el array y retorna el primer elemento que cumpla con una condición, toca guardarlo en una variable
-const perro = animales.find((animal) => {
+/* const perro = animales.find((animal) => {
     return animal === 'Perro'
 })
 let productoElegido = prompt('Ingrese el producto que quiere comprar');
-console.log (productos.find(producto) =>{
-producto.nombre === productoElegido
-})
+console.log (productos.find((producto) => {producto.nombre === productoElegido})) */
+//filter() = recorre el array y retorna una nuevo con los elementos que cumplan con una condición, find devuelve solo el primero, filter devuelve varios, siempre retorna un array aunque no encuentre nada y se utiliza el .include es porque con el le decimos que nos devuelva los productos que dentro de su nombre tengan silla
+/* const sillas = productos.filter((producto) => producto.nombre.includes === 'Silla')
+const perro = animales.filter((animal) => animal === 'Perro') */
+
+//some() = recorre el array y responde true o false si hay algun elemento que cumpla con una condición
+/* const cisne = animales.some((animal) => animal === 'Cisne') */
+//map() = recorre un array y devuelve uno nuevo con los elementos transformados del elemento o array original
+/* const nombres = productos.map((producto) => producto.nombre)
+const preciosActualizados = productos.map((producto) => {
+    return {
+        nombre: producto.nombre,
+        precio : producto.precio * 2
+    }
+}) */
+// reduce () = recorre el array y nos retorna un unico valor después de hacer una operacion en los elementos, tiene dos parametros, el acumulador y el de cada número, la operación y el número con el que comenzamos la suma o el proceso
+/* const total = numeros.reduce((acumulador, numero) => acumulador + numero, 0) */
+// sort() = reordena el array según el criterio indicado 
+// numeros.sort((a, b) => a - b)  // ordena de menor a mayor
+// numeros.sort((a, b) => b - a)  // ordena de mayor a menor
+/* const numeroDecimal1 = 1.25;
+const numeroDecimal2 = 1.75; */
+// Math.Min = retorna el número minimo de un array o listado
+// Math. max = retorna el mayor
+// Ceil = retorna el entero mayor cercano al que le indiquemos
+/* console.log(Math.ceil(numeroDecimal1)); //retorna el dos porque es el más cercano a 1.25
+//floor() = me devuelve el más cercano entero hacía abajo 
+console.log(Math.floor(numeroDecimal1)); //retorna el uno porque es el más cercano a 1.25
+//round = retorna el número entero más cercano al que le pasemos, mayor de 1.5 hacía arriba, menor hacía abajo 
+console.log(Math.round(numeroDecimal1)) */
+//random = retorna un número aleatorio entre 0 y 1   
+// Para esto podemos utilizar el
+/* Math.random(Math.floor() * (max - min + 1) + min) */
