@@ -241,3 +241,130 @@ return acumulador */
 // return acumulador > numero ? acumulador : numero
 // }, 0)
 // console.log(mayor)
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70]
+numeros.forEach((numero, index) => {
+    console.log(numero, (index + 1))
+})
+const nombres = ['Sebastian', 'Manuela', 'Margarita', 'Yuca']
+nombres.forEach((nombre) => {
+    console.log(nombre)
+}) */
+/* const nombres = ['Marisol', 'Sebastian', 'Manuela', 'Yuca', 'Margarita'];
+nombres.forEach((nombre) => {
+    console.log(`Buenos días ${nombre}, espero te encuentres demasiado bien`)
+}) */
+
+/*     const numeros = [1, 2, 3, 4, 6, 80, 50, 70]
+    const multiplicado = numeros.map((numero) => {
+        return numero * 2
+    })
+    console.log(multiplicado) */
+/*     const nombres = ['marisol', 'sebastian', 'manuela', 'yuca', 'margarita'];
+    const caps = nombres.map((nombre) => {
+        return nombre.toUpperCase()
+    })
+    console.log(caps) */
+/*     const estudiantes = [
+    {nombre: 'Sebastian', nota: 5},
+    {nombre: 'Manuela', nota: 4.5},
+    {nombre: 'Yuca', nota: 3.5},
+    ];
+    const notas = estudiantes.map((estudiante) => {
+        return estudiante.nota
+    })
+    console.log(notas)
+ */
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70, 25, 47, 56, 89, 1065, 14564,]
+const pares = numeros.filter((numero) => {
+    return numero % 2 == 0
+})
+console.log(pares)
+console.log(numeros) */
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70, 25, 47, 56, 89, 1065, 14564,]
+const suma = numeros.reduce((acumulador, numero) => acumulador + numero, 0)
+console.log(suma) */
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70, 25, 47, 56, 89, 1065, 14564,];
+const mayor = numeros.reduce((aumentador, numero) =>{
+    return aumentador < numero ? numero : aumentador
+})
+console.log(mayor) */
+/* const productos = [
+    {nombre: 'Arequipe', precio: 100},
+    {nombre: 'Leche', precio: 20},
+    {nombre: 'Arepas', precio: 10},
+    {nombre: 'Huevos', precio: 15},
+    {nombre: 'Granadilla', precio: 150},
+    {nombre: 'Mango', precio: 17},
+]
+const total = productos.reduce((contador, producto) =>{
+    return contador + producto.precio
+},0)
+console.log(total) */
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70, 25, 47, 56, 89, 1065, 14564,];
+const diez = numeros.find((numero) => {
+    return numero > 100
+})
+console.log(diez) */
+// const nombres = ['marisol', 'sebastian', 'manuela', 'yuca', 'margarita', 'andrea'];
+/* const a = nombres.find((nombre) => {
+    return nombre.startsWith('A') || nombre.startsWith('a') // !esta es una opcion nueva de un metodo para strings en donde estamos diciendole que lo que comience con a o A
+}) */
+// const a = nombres.find((nombre) => {
+//     return nombre[0] === 'a' || nombre[0] === 'a' // ! Aca estamos accediendo a la prte interna de cada uno de los elementos del array, eso quiere decir que esta pasando por cada elemento y lo vuelve a cada elemento un array internamente y se le dice que la primera letra de ese array interno si es a o A devuelvalo
+// })
+// console.log(a)
+/* const estudiantes = [
+    {nombre: 'Sebastian', nota: 5},
+    {nombre: 'Manuela', nota: 4.5},
+    {nombre: 'Yuca', nota: 3.5},
+    ];
+const noventa = estudiantes.find((estudiante) => {
+    return estudiante.nota > 4.5
+})
+console.log(noventa) */
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70, 25, 47, 56, 89, 1065, -14564,];
+const negativo = numeros.some((numero) => {
+    return numero < 0
+})
+console.log(negativo) */
+/* const nombres = ['marisol', 'sebastian', 'manuela', 'yuca', 'margarita', 'andrea'];
+const ocho = nombres.some((nombre) => {
+    return nombre.length > 8 
+})
+console.log(ocho) */
+/* const productos = [
+    {nombre: 'Arequipe', precio: 100},
+    {nombre: 'Leche', precio: 20},
+    {nombre: 'Arepas', precio: 10},
+    {nombre: 'Huevos', precio: 15},
+    {nombre: 'Granadilla', precio: 150},
+    {nombre: 'Mango', precio: 17},
+]
+const veinte = productos.some((producto) => {
+    return producto.precio < 20
+})
+console.log(veinte) */
+/* const numeros = [1, 2, 3, 4, 6, 80, 50, 70, 25, 47, 56, 89, 1065, 14564,];
+const positivo = numeros.every((numero) => {
+    return numero > 0
+})
+console.log(positivo) */
+/* const nombres = ['marisol', 'sebastian', 'manuela', 'yuca', 'margarita', 'andrea'];
+const tres = nombres.every((nombre) => {
+    return nombre.length > 3
+})
+console.log(tres) */
+/* const estudiantes = [
+    {nombre: 'Sebastian', nota: 5},
+    {nombre: 'Manuela', nota: 4.5},
+    {nombre: 'Yuca', nota: 3.5},
+    ];
+    const aprobar = estudiantes.every((estudiante) => {
+        return estudiante.nota >= 3.5
+    })
+    console.log(aprobar) */
+/* const mayorQue = (x) => {
+    return (num) => num > x
+}
+const mayorQueDiez = mayorQue(10)
+console.log(mayorQueDiez(20)) */
