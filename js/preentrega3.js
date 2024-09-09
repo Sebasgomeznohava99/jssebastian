@@ -1,70 +1,56 @@
+//*dark mode button
+const darkMode = document.querySelector('#color-mode');
+const body = document.body;
+let darkModeLocalStorage = localStorage.getItem('dark-mode');
+//*Variable Historial
 let historial = [];
 
-const nombre = () => {
-    let mensaje = '';
-    let nombre = prompt(`Bienvenido, espero te encuentres demasiado bien!!!
-Por favor dinos tu nombre para poder saber quien esta ingresando al sistema`);
-    while(nombre === '' || !isNaN(nombre) || nombre.length < 2){
-        alert('Por favor introduce tu nombre completo para poder saber con quien es la persona que estamos tratando y poder brindarte ayuda');
-        nombre = prompt(`Bienvenido, espero te encuentres demasiado bien!!!
-        Por favor dinos tu nombre para poder saber quien esta ingresando al sistema`);
-    }
-    mensaje = `Bienvenido ${nombre}. Espero te encuentres demasiado bien el día de hoy.`;
-    return mensaje;
-};
+//*Información en los inputs
+const inputNombre = document.querySelector('#nombre');
+const inputPrecio = document.querySelector('#precio');
+const inputDescuento = document.querySelector('#descuento');
+const inputCorreo = document.querySelector('#correo');
+const botonForm = document.querySelector('#boton-form');
 
-const opciones = (nombre) => {
-    let opcion = parseInt(prompt(`${nombre}
-Por favor dinos que es lo que quieres hacer el día de hoy:
-1. Cotizar
-2. Mira el historial
-3. Cancelar`));
-    while (opcion === '' || opcion < 1 || opcion > 3 || isNaN(opcion)){
-        alert('Por favor escoge entre las opciones dadas = 1, 2, 3');
-        opcion = parseInt(prompt(`${nombre}
-Por favor dinos que es lo que quieres hacer el día de hoy:
-1. Cotizar
-2. Mira el historial
-3. Cancelar`));
-    }
-    return opcion;
-};
+const form = document.querySelector('#registro');
+form.addEventListener('submit', constructor);
 
-function constructor(){
-    let nombre = prompt('Por favor dinos el nombre del producto a cotizar');
-    while(nombre === '' || !isNaN(nombre) || nombre === null){
-        alert('Por favor dinos la información como se pide para poder proseguir con la calculadora');
-        nombre = prompt('Por favor dinos el nombre del producto a cotizar');
-    }
-    let precio = parseInt(prompt('Por favor dinos el precio del producto a cotizar'));
-    while (precio === '' || isNaN(precio) || precio <= 0){
-        alert('Por favor dinos la información como se pide para poder proseguir con la calculadora');
-        precio = parseInt(prompt('Por favor dinos el precio del producto a cotizar'));
-    }
-    let descuento =  parseInt(prompt('Por favor dinos el descuento que tiene el producto entre 1 a 100'));
-    while (descuento === '' || isNaN(descuento) || descuento < 0 || descuento > 100){
-        alert('Por favor dinos la información como se pide para poder proseguir con la calculadora');
-        descuento = parseInt(prompt('Por favor dinos el descuento que tiene el producto entre 1 a 100'));
-    }
-    let precioDescuento = precio - (precio * (descuento / 100));
-    return {nombre, precio, descuento, precioDescuento};
+//*Construcción del objeto
+function constructor(e){
+    e.preventDefault();
+    let nombre = inputNombre.value;
+    let precio = inputPrecio.value;
+    let descuento =  inputDescuento.value;
+    let precioDescuento =(inputPrecio.value) - ((inputPrecio.value) * (inputDescuento.value / 100));
+    let correo = inputCorreo.value;
+    form.reset();
+    inputNombre.focus();
+    return {nombre, precio, descuento, precioDescuento, correo};
 }
 
-function agregarHistorial (nombre, precio, descuento, precioDescuento){
+//*Agregar al historial
+function agregarHistorial (nombre, precio, descuento, precioDescuento, correo){
     historial.push({
         nombre,
         precio,
         descuento,
-        precioDescuento
+        precioDescuento,
+        correo
     });
 }
 
-function mostrarHistorial() {
-    let mensaje = `Historial de productos cotizados:\n`;
-    historial.forEach((producto,  index) => {
-        mensaje += `Producto #${index + 1}:\nNombre: ${producto.nombre}.\nPrecio: ${producto.precio}.\nDescuento: ${producto.descuento}%.\nPrecio con Descuento: ${producto.precioDescuento}.\n\n`;
-    });
-    alert(mensaje);
+//*Mostrar en lista ordenada 
+const lista = document.querySelector('#lista-historial')
+function mostrarHistorial(){
+historial.forEach((historia) =>{
+    const li = document.createElement('li')
+    li.innerText = `Nombre Producto: ${historia.nombre}
+Precio Producto: ${historia.precio}
+Descuento Producto: ${historia.descuento}%
+Precio Con Descuento: ${historia.precioDescuento}
+Correo: ${historia.correo}`
+lista.appendChild(li)
+})
 }
 
 function ejecutar(){
