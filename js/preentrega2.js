@@ -75,17 +75,17 @@ function ejecutar(){
         if(opcion === 1){
             let construccion = constructor();
             agregarHistorial(construccion.nombre, construccion.precio, construccion.descuento, construccion.precioDescuento);
-            opcion = opciones(nombreRetornado);  // Volvemos a pedir la opción después de agregar un producto
+            opcion = opciones(nombreRetornado);  
         } else if (opcion === 2){
             if (historial.length === 0){
                 alert('No has hecho ninguna cotización');
             } else {
                 mostrarHistorial();
             }
-            opcion = opciones(nombreRetornado);  // Volvemos a pedir la opción después de mostrar el historial
+            opcion = opciones(nombreRetornado); 
         } else {
             alert('Muchas gracias por entrar a trabajar con nosotros');
-            break;  // Salimos del ciclo infinito si elige cancelar
+            break; 
         }
     }
 }

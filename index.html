@@ -4,37 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preentrega 3</title>
+    <title>Proyecto Final JS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/proyecto-final.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
     <link rel="shortcut icon" href="../img/logo-Photoroom.png-Photoroom.ico" type="image/x-icon">
     <meta name="description" content="">
     <meta name="keywords" content="javascript JS Arrays objetos calculadora tienda">
     <meta name="robot" content="index, follow">
 </head>
+
 <body>
     <head>
-        <nav class="navbar navbar-expand-lg bg-color">
+        <nav class="navbar navbar-expand-lg bg-success">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Proyecto Final JS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="#">Registro</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-info" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -46,45 +48,53 @@
         </div>
         <div>
             <div class="contenedor-titulo">
-                <h1>Bienvenidos a mi 3 entrega para el curso de JavaScript</h1>
+                <h1>Bienvenidos a mi <strong>PROYECTO FINAL</strong> de JS</h1>
                 <h2>En el que vamos a poder integrar todos los temas vistos hasta ahora</h2>
             </div>
-                <ol id="lista-temas">
-                    <li class="item-temas">Variables y Constantes</li>
-                    <li class="item-temas">Condicionales y Diagramas de Flujo</li>
-                    <li class="item-temas">Arrays</li>
-                    <li class="item-temas">Objetos</li>
-                    <li class="item-temas">Funciones de Orden Superior </li>
-                    <li class="item-temas">Storage</li>
-                    <li class="item-temas">DOM</li>
-                    <li class="item-temas">Funciones</li>
-                </ol>
-            </div>
+            <ol id="lista-temas">
+                <li class="item-temas">Variables y Constantes</li>
+                <li class="item-temas">Condicionales y Diagramas de Flujo</li>
+                <li class="item-temas">Arrays</li>
+                <li class="item-temas">Objetos</li>
+                <li class="item-temas">Funciones de Orden Superior </li>
+                <li class="item-temas">Storage</li>
+                <li class="item-temas">DOM</li>
+                <li class="item-temas">Funciones</li>
+                <li class="item-temas">Asincronia</li>
+                <li class="item-temas">Promesas</li>
+                <li class="item-temas">Fetch</li>
+            </ol>
+        </div>
         <div class="contenedor-encuesta">
-            <p class="parrafor-form" id="parrafo-encuesta">Por favor en cada uno de estos campos ingresa la información solicitada para poder darte todos los detalles del calculo de cual es el precio del producto basado en el descuento dado. <br>
+            <p class="parrafor-form" id="parrafo-encuesta">Por favor en cada uno de los espacios danos tu información para estar en contacto por medio de correos y SMS. En donde te daremos información de todas las promociones que tenemos en nuestra tienda.<br>
                 Muchas gracias.
             </p>
-        <form action="" id="registro">
-            <label for="nombre" class="labels">Nombre Producto:</label>
+            <form action="" id="registro">
+                <label for="nombre" class="labels">Nombre:</label>
                 <input type="text" id="nombre" placeholder="Nombre" class="input-form" required>
-            <label for="precio" class="labels">Precio Producto:</label>
-                <input type="number" placeholder="Precio: Ej 50000" id="precio" class="input-form" required>
-            <label for="descuento" class="labels">Descuento Producto:</label>
-                <input type="number" id="descuento" placeholder="Ej 10 es 10%" class="input-form" required>
-            <label for="correo" class="labels">Correo Electronico:</label>
+                <label for="telefono" class="labels">Número de Telefono:</label>
+                <input type="number" placeholder="(312) - 850 - 5626" id="telefono" class="input-form" required>
+                <label for="pais" class="labels">País de Residencia:</label>
+                <input type="text" id="pais" placeholder="Colombia" class="input-form" required>
+                <label for="correo" class="labels">Correo Electronico:</label>
                 <input type="email" id="correo" placeholder="ejemplo@correo.com" class="input-form" required>
-            <input type="submit" value="Submit" id="boton-form" class="boton-form">
-        </form>
-    </div>
-    <section class="section-historial">
-        <h2 class="titulo-historial">Historia Cotizaciones</h2>
-        <ol id="lista-historial"></ol>
-    </section>
+                <input type="submit" value="Submit" id="boton-form" class="boton-form">
+            </form>
+        </div>
+        <section class="contenedor" id="contenedor-productos">
+            <div style="background-color: black; height: 10px;">
+                <p>hola, hola hola prueba prueba</p>
+            </div>
+        </section>
+        <section class="section-historial">
+            <h2 class="titulo-historial">Personas Registradas:</h2>
+            <ol id="lista-historial"></ol>
+        </section>
     </main>
     <footer>
 
     </footer>
-    <script src="./js/preentrega3-1.js"></script>
+    <script src="./js/proyectofinal.js"></script>
 </body>
 
 </html>

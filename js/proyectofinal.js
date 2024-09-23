@@ -1,11 +1,17 @@
-
+/**
+ * *1. Tengo que traerme todos los inputs para poder que se agreguen al historial
+ * *2.Tengo que agregar el fecth para que me traiga los telefonos y se agreguen en el medio de todo mi contenedor 
+ * *3.  Agergar un boton que le de al body una clase que haga que se muestre   el recuadro con los objetos necesarios 
+ * *4. Agregar los productor con un inner html
+ * *5. 
+ */
 
 //*Traer todos los inputs y formulario 
 
 const form = document.querySelector('#registro');
 const nombreInput = document.querySelector('#nombre');
-const precioInput = document.querySelector('#precio');
-const descuentoInput = document.querySelector('#descuento');
+const telefonoInput = document.querySelector('#telefono');
+const paisinput = document.querySelector('#pais');
 const correoInput = document.querySelector('#correo');
 
 //*Historial Vacio
@@ -19,14 +25,14 @@ form.addEventListener('submit', (e) => {
         nombreInput.focus();
         return
     }
-    if(isNaN(precioInput.value) || (precioInput.value) < 1){
-        precioInput.value = '';
-        precioInput.focus();
+    if(isNaN(telefonoInput.value) || (telefonoInput.value.lenght) < 10){
+        telefonoInput.value = '';
+        telefonoInput.focus();
         return
     }
-    if(isNaN(descuentoInput.value) || (descuentoInput.value) < 0 || (descuentoInput.value) > 100){
-        descuentoInput.value = '';
-        descuentoInput.focus();
+    if(!isNaN(paisinput.value)){
+        paisinput.value = '';
+        paisinput.focus();
         return
     }
     const construccion = constructor();
@@ -40,11 +46,10 @@ form.addEventListener('submit', (e) => {
 //*Funcion constructora
 function constructor (){
     let nombre = nombreInput.value;
-    let precio = parseFloat(precioInput.value);
-    let descuento = parseFloat(descuentoInput.value);
-    let precioDescuento = (precio) - ((precio) * (descuento / 100));
+    let telefono = telefonoInput.value;
+    let pais = paisinput.value;
     let correo = correoInput.value;
-    return {nombre, precio, descuento, precioDescuento, correo}
+    return {nombre, telefono, pais, correo}
 }
 
 //* Funcion agregar al historial 
@@ -62,9 +67,8 @@ historial.forEach((historia, index) => {
     let li = document.createElement('li');
     li.innerText = `Producto # ${index + 1}
 Nombre : ${historia.nombre}
-Precio: ${historia.precio}
-Descuento: ${historia.descuento}
-Precio Con Descuento: ${historia.precioDescuento}
+Precio: ${historia.telefono}
+Descuento: ${historia.pais}
 Correo Electronico: ${historia.correo}`
 lista.appendChild(li)
 })
@@ -87,3 +91,33 @@ function historialEnLocalStorage(){
     nombreInput.focus();  
 }
 historialEnLocalStorage();
+
+//* Traer el contenedor para poder pintar las tarjetas 
+
+const contenedor = document.querySelector('#contenedor-productos');
+
+//* Funcion para pintar los productos en el contenedor 
+function mostrarProductos (arr){
+contenedor.innerHTML = '';
+let htmlInsertado;
+for (const elemento of arr) {
+    const {img, id, nombre, precio} = elemento
+    htmlInsertado= `<div class = "card">
+    <img src = "../img/${img}" alt = " ${nombre}">
+    <hr>
+    <h3>${nombre}</h3>
+    <p class = "parrafo-precio">Precio $:  ${precio.toLocaleString('es-Es')}</p>
+    <div class = "card-action">
+    <button class =" btn btn success" id = "${id}">Agregar</button>
+    </div>
+    </div>`
+contenedor.innerHTML += htmlInsertado
+}
+}
+
+
+fetch('../data/telefonos.json')
+.then((response) => response.json())
+.then((servicio) => {
+mostrarProductos(servicio)
+})
