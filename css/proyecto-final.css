@@ -97,3 +97,27 @@ img {
 .card .parrafo-precio{
     font-weight: bold;
 }
+.input-buscar{
+    border: none;
+    background-color: lightgray;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+}
+.contenedor-busqueda{
+    width: 100%;
+    margin: 30px;
+    text-align: center;
+}
+.input-buscar::placeholder{
+    opacity: 1;
+    color:black;
+}
+.no-resultados {
+    text-align: center;
+    font-weight: bolder;
+}
+.contenedor-no-resultados {
+    text-align: center;
+    grid-column: 1 / 4;
+}
