@@ -37,7 +37,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.1/dist/sweetalert2.min.css
                             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Registro</a>
+                            <a class="nav-link" href="./html/carrito.html">Carrito</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -96,12 +96,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.14.1/dist/sweetalert2.min.css
             <h2 class="titulo-historial">Personas Registradas:</h2>
             <ol id="lista-historial"></ol>
         </section>
+        <section id="contenedor-productos-seleccionados" class="contenedor-productos-seleccionados">
+            <h3>Productos seleccionados:</h3>
+            <ul id="productos-seleccionados"></ul>
+            <h4>Total: $<span id="total-carrito">0</span></h4>
+            <button id="finalizar-compra" class="btn btn-success">Finalizar Compra</button>
+        </section>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="./js/proyectofinal.js"></script>
-
 </body>
-
 </html>
